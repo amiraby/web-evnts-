@@ -34,6 +34,8 @@ nav{
     padding: 20px 0;
     padding-top: 20px;
     justify-content:space-around;
+    position: sticky;
+      
 }
 
 nav ul{
@@ -65,6 +67,8 @@ nav a{
    nav a:hover{
         color: #C07B3B;
     }
+
+   
    
 header .row{
     margin-top: 60px;
@@ -225,6 +229,9 @@ height:132px;
         text-transform: capitalize;
         color: #FFFFFF;
         cursor: pointer;
+        
+        margin-left: -7%;
+        margin-top: -2%;
  }
     /* choisir le programme des evenements */
 
@@ -1022,6 +1029,32 @@ select#ville{
     position: relative;
     top: -35%;
 }
+.image-dow{
+    left: -21%;
+    position: relative;
+  }
+
+.image-dow .SUBMIT{
+    width: 15%;
+    height: 10%;
+}
+
+.image-dow label{
+    position: relative;
+}
+.description-event{
+    margin-left: 20px;
+}
+
+.description-event .SUBMIT{
+    position: absolute;
+    margin-left: 80px;
+    top: 78%;
+    width: 11%;
+    color:#FFFFFF;
+    background-color: #C07B3B;
+    height: 8%;
+}
 
 
 
@@ -1202,3 +1235,32 @@ select#ville{
           height: 30px;
       }
   }
+
+  .contactezz input[type=text], select, .contactezz textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  
+  .contactezz input[type=submit] {
+    background-color: #C07B3B;;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  
+  .contactezz  .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 17px;
+    margin: -22%;
+     margin-top: 8%;
+}
