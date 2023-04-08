@@ -19,15 +19,15 @@
             <br>
            <div class="contactezz">
             <div class="container">
-                <form action="/action_page.php">
+                <form method="POST" action="get_response.php">
                   <label for="fname">Nom</label>
-                  <input type="text" id="fname" name="firstname" placeholder="Ton nom..">
+                  <input type="text" id="fname" name="name" placeholder="Ton nom..">
               
-                  <label for="lname">Prenom</label>
-                  <input type="text" id="lname" name="lastname" placeholder="Ton prenom..">
+                  <label for="email">email</label>
+                  <input type="text" id="email" name="email" placeholder="Ton prenom..">
               
-                  <label for="subject">Votre message</label>
-                  <textarea id="subject" name="subject" placeholder="Ecrire quelque chose.." style="height:100px"></textarea>
+                  <label for="message">Votre message</label>
+                  <textarea id="message" name="message" placeholder="Ecrire quelque chose.." style="height:100px"></textarea>
               
                   <input type="submit" value="envoyer">
                 </form>

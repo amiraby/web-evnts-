@@ -15,12 +15,38 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../styles/main_style.css" />
-    <script src="../js/buttons.js"></script>
     <title>login</title>
 
 </head>
 
 <body class="overflow">
+<?php
+    require('db.php');
+    session_start();
+    // When form submitted, check and create user session.
+    if (isset($_POST['username'])) {
+        $username = stripslashes($_REQUEST['username']);    // removes backslashes
+        $username = mysqli_real_escape_string($con, $username);
+        $password = stripslashes($_REQUEST['password']);
+        $password = mysqli_real_escape_string($con, $password);
+        
+        // Check user is exist in the database
+        $query    = "SELECT * FROM `users` WHERE username='$username'
+                     AND password='" . md5($password) . "'";
+        $result = mysqli_query($con, $query) or die(mysql_error());
+        $rows = mysqli_num_rows($result);
+        if ($rows == 1) {
+            $_SESSION['username'] = $username;
+            // Redirect to user dashboard page
+            header("Location: dashboard.php");
+        } else {
+            echo "<div class='form'>
+                  <h3>Incorrect Username/password.</h3><br/>
+                  <p class='link'>Click here to <a href='login.php'>Login</a> again.</p>
+                  </div>";
+        }
+    } else{ 
+?>
     <div class="row">
         <div class="col-6" id="first">
             <h5>connexion</h5>
@@ -73,16 +99,13 @@
                     </div>
                 </label>
 
-                <input type="button" name="submit" id="submit" onclick="validate()"  width="290" height="86" value="Login" class="connecter"/>
+                <input type="sumbit" name="submit" id="submit"  width="290" height="86" value="Login" class="connecter"/>
                 <a href="">
                     <p class="oublier">J’ai oublie mon mot de passe</p>
                 </a>
                 </form>
-
-   
-
                 <br>
-                <p class=inscri>Je n’ai pas de compte. <a href="/My-Events/events/pages/signup.html"><span>Je
+                <p class=inscri>Je n’ai pas de compte. <a href="../pages/signup.php"><span>Je
                             m’inscris</span></a> </p>
                 <br>
                 <div id="last"> </div>
@@ -353,7 +376,9 @@
         </div>
     </div>
     </div>
+    <?php
+    }
+?>
 </body>
-
 </html>
 

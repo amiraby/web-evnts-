@@ -16,6 +16,34 @@
 </head>
 
 <body class="overflow">
+<?php
+    require('db.php');
+    // When form submitted, insert values into the database.
+    if (isset($_REQUEST['username'])) {
+        // removes backslashes
+        $username = stripslashes($_REQUEST['username']);
+        //escapes special characters in a string
+        $username = mysqli_real_escape_string($con, $username);
+        $email    = stripslashes($_REQUEST['email']);
+        $email    = mysqli_real_escape_string($con, $email);
+        $password = stripslashes($_REQUEST['password']);
+        $password = mysqli_real_escape_string($con, $password);
+        $query    = "INSERT into users (username, password, email) VALUES ('$username', '" . md5($password) . "', '$email')";
+        $result   = mysqli_query($con, $query);
+        if ($result) {
+            echo "<div class='form'>
+                  <h3>You are registered successfully.</h3><br/>
+                  <p class='link'>Click here to <a href='login.php'>Login</a></p>
+                  </div>";
+         } else {
+            echo "<div class='form'>
+                  <h3>Required fields are missing.</h3><br/>
+                  <p class='link'>Click here to <a href='registration.php'>registration</a> again.</p>
+                  </div>";
+        }
+    }
+    else {
+?>
   <div class="row">
 
     <div class="col-6" id="first">
@@ -74,10 +102,7 @@
           <input type="submit" name="submit" value="submit" for="submit" onclick="signup()" width="290" height="86" class="connecter2">
       </form>
 
-     
-
-
-      <p class=inscri>J'ai un compte. <a href="/My-Events/events/pages/login.php"><span>Je me connecter</span></a> </p>
+      <p class=inscri>J'ai un compte. <a href="../pages/login.php"><span>Je me connecter</span></a> </p>
       <br>
       <div id="last"> </div>
       <p class="last">Lorem ipsum dolor sit amet, consectetur adipiscing elit. <span>Nunc vulputate </span>et <span>
@@ -351,6 +376,9 @@
     </div>
   </div>
   </div>
+  <?php
+    }
+?>
 </body>
 
 </html>

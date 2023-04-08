@@ -18,13 +18,6 @@ header{
     height: 900px;
     left: 0px;
     top: 0px;
-    /* transition: all 0.5s ease-out;
-     -webkit-transition: all 0.5s ease-out;
-     -moz-transition: all 0.5s ease-out;
-     -ms-transition: all 0.5s ease-out;
-     -o-transition: all 0.5s ease-out;
-     outline:none;
-     border-width:0px; */
 }
 
 nav{
@@ -834,6 +827,7 @@ left: 53px;
     left:290px;
     }
     .connecter{
+        text-align: center;
         position: absolute;
         width: 250px;
         height: 46px;
@@ -1055,187 +1049,6 @@ select#ville{
     background-color: #C07B3B;
     height: 8%;
 }
-
-
-
-
-
-
-@media only screen and (max-width: 768px) {
-    header {
-      height: 600px;
-    }
-    nav {
-      flex-direction: column;
-    }
-    .event1 {
-      margin-left: 0;
-    }
-  }
-  
-  @media only screen and (min-width: 769px) and (max-width: 1200px) {
-    header {
-      height: 750px;
-    }
-    nav {
-      justify-content: space-between;
-    }
-    .event1 {
-      margin-left: 20px;
-    }
-  }
-  
-  @media only screen and (min-width: 1201px) {
-    header {
-      height: 900px;
-    }
-    nav {
-      justify-content: space-around;
-    }
-    .event1 {
-      margin-left: 60px;
-    }
-  }
-  
-  
-  
-  @media (max-width: 768px) {
-      .recherche-bar {
-          flex-direction: column;
-          margin: 20px 0;
-          height: auto;
-      }
-  
-  
-  label {
-      font-family: 'Podkova';
-      font-style: normal; 
-      font-weight: 400;
-      font-size: 20px;
-      line-height: 22px;
-      text-transform: capitalize;
-      color: rgba(255, 255, 255, 0.56);
-      margin-bottom: 15px;
-  }
-  
-  .rech {
-      background-color: #C07B3B;
-      border: none;
-      text-decoration: #FFFFFF;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 24px;
-      line-height: 27px;
-      text-transform: capitalize;
-      color: #FFFFFF;
-      cursor: pointer;
-  }
-  
-  #programme {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin: 20px 0;
-  }
-  
-  #programme-head h3 {
-      font-weight: 700;
-      font-size: 28px;
-      text-transform: uppercase;
-      color: #0B0A0F;
-      line-height: 40px;
-      font-size: normal;
-  }
-  }
-  
-  
-  
-  @media (max-width: 768px) {
-      #cherche-prog {
-          margin-left: 0;
-          margin-top: 10px;
-      }
-  }
-  
-  
-  
-  @media (max-width: 1200px) {
-      .card {
-          width: 45%;
-      }
-  }
-  
-  @media (max-width: 992px) {
-      .card {
-          width: 60%;
-      }
-  }
-  
-  @media (max-width: 768px) {
-      .card {
-          width: 80%;
-          height: auto;
-      }
-  }
-  
-  
-  @media (max-width: 1200px) {
-      .card {
-          width: 45%;
-      }
-  }
-  
-  @media (max-width: 992px) {
-      .card {
-          width: 60%;
-      }
-  }
-  
-  @media (max-width: 768px) {
-      .card {
-          width: 80%;
-          height: auto;
-      }
-  }
-  
-  @media (max-width: 992px) {
-      .marques h5 {
-          font-size: 28px;
-      }
-  }
-  
-  @media (max-width: 768px) {
-      .marques h5 {
-          font-size: 24px;
-      }
-  
-      .icons img {
-          height: 40px;
-      }
-  }
-  
-  @media (max-width: 576px) {
-      .organisation h5 {
-          font-size: 32px;
-      }
-  
-      .organisation p {
-          font-size: 16px;
-      }
-  
-      .marques h5 {
-          font-size: 20px;
-      }
-  
-      .marques p {
-          font-size: 14px;
-      }
-  
-      .icons img {
-          height: 30px;
-      }
-  }
-
   .contactezz input[type=text], select, .contactezz textarea {
     width: 100%;
     padding: 12px;
@@ -1264,3 +1077,4 @@ select#ville{
     margin: -22%;
      margin-top: 8%;
 }
+/*responsive web */
